@@ -24,29 +24,38 @@ Sample Output 0:
 import java.io.*;
 import java.util.*;
 
-public class Solution {
+public class Solution 
+{
 
-    public static void main(String[] args) {
+    public static void main(String[] args) 
+    {
         Scanner sc=new Scanner(System.in);
         ArrayList<Integer>a= new ArrayList<Integer>();
         ArrayList<Integer>c= new ArrayList<Integer>();
         ArrayList<Integer>d= new ArrayList<Integer>();
-        for(int i=0;i<6;i++){
+        for(int i=0;i<6;i++)
+        {
             int b=sc.nextInt();
             a.add(b);
         }
-        for (int i : a) {
-      if(i%2==0){
-          c.add(i);}
-            else{
-                d.add(i);
-            }
-        }
-        for(int i:c){
+        for (int i : a) 
+        {
+              if(i%2==0)
+              {
+                  c.add(i);
+              }
+              else
+              {
+                  d.add(i);
+               }
+         }
+        for(int i:c)
+        {
             System.out.print(i+" ");
         }
         System.out.println();
-        for(int i:d){
+        for(int i:d)
+        {
             System.out.print(i+" ");
         }
     }
