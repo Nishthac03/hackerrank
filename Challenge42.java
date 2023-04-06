@@ -86,3 +86,79 @@ Sample Output 0:
 8
 six eight
 */
+
+
+import java.io.*;
+import java.util.function.*;
+import java.util.*;
+
+public class Solution 
+{
+    private static final String[] ones = {"", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"};
+    private static final String[] tens = {"", "", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"};
+
+
+    public static void main(String[] args) 
+    {
+        Scanner sc=new Scanner(System.in);
+        int a=sc.nextInt();
+        int b=sc.nextInt();
+        int sum=a+b;
+        int product=a*b;
+        
+        System.out.println(sum);
+        System.out.println(product);
+        String x=convertNumberToWords(sum);
+        String y=convertNumberToWords(product);
+         System.out.print(x);
+        System.out.print(" ");
+         System.out.print(y);
+        
+    }
+        private static String convertNumberToWords(int number)
+        {
+        
+        if (number == 0) 
+        {
+            return "zero";
+        }
+        
+        if (number < 0 || number > 999999) 
+        {
+            return "invalid number";
+        }
+        
+        String words = "";
+        
+        if (number / 1000 > 0) 
+        {
+            words += convertNumberToWords(number / 1000) + " thousand ";
+            number %= 1000;
+        }
+        
+        if (number / 100 > 0) 
+        {
+            words += ones[number / 100] + " hundred ";
+            number %= 100;
+        }
+        
+        if (number > 0) 
+        {
+            if (number < 20) 
+            {
+                words += ones[number];
+            } 
+            else 
+            {
+                words += tens[number / 10] + " ";
+                number %= 10;
+                if (number > 0) 
+                {
+                    words += ones[number];
+                }
+            }
+        }
+        
+        return words;
+        }
+}
