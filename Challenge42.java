@@ -1,4 +1,4 @@
-/*Raju and ramu are playing a game of odd and even number first raju tells one odd number and ramu tells one even number, 
+/*Question1:   Raju and ramu are playing a game of odd and even number first raju tells one odd number and ramu tells one even number, 
 in this order they create a list of 6 numbers. Now raju needs to print even number and ramu needs to print the odd number
 
 Input Format:
@@ -60,3 +60,29 @@ public class Solution
         }
     }
 }
+
+
+/*Question2:    Rahul, Ramu and Ramesh where creating 3 different Function interface with multiple parameters, 
+further Rahul did addition operation with multiple parameters, Ramu did multiplication operation with multiple parameters and
+Ramesh passed string message of the answers what Rahul and Ramu got in terms of words
+
+Input Format:
+2 4
+
+Constraints:
+Use 3 different types of functional interface for addition, multiplication operation with multiple parameters and one for passing the string message.
+Use Only Lambda expression for addition, multiplication operations and passing the string message
+
+Output Format:
+6
+8
+six eight
+
+Sample Input 0:
+2 4
+
+Sample Output 0:
+6
+8
+six eight
+*/
