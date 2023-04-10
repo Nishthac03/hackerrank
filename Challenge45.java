@@ -107,3 +107,31 @@ Sample Input:
 Sample Output 0:
 Certificate Issued
 */
+
+
+import java.io.*;
+import java.util.*;
+
+public class Solution 
+{
+
+    public static void main(String[] args) 
+    {
+        Scanner s=new Scanner (System.in);
+        int a=s.nextInt();
+        int b=s.nextInt();
+        if(a==0 && b==1)
+            {
+            System.out.print("Certificate Issued");
+            }
+        else if(a!=0)
+        {
+            
+            System.out.print("without birth no certificate");
+        }
+        else
+        {
+            System.out.print("invalid input");
+        }
+    }
+}
