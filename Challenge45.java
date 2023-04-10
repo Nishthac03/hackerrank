@@ -31,3 +31,55 @@ Sample Input 1:
 Sample Output 1:
 Invalid input
 */
+
+
+import java.util.Scanner;
+
+public class Solution 
+{
+    public static void main(String[] args) 
+    {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        if (n <= 0) 
+        {
+            System.out.println("Invalid input");
+            return;
+        }
+        int shirtCount = 0, trouserCount = 0;
+        for (int i = 0; i < n; i++) 
+        {
+            int item = sc.nextInt();
+            if (item == 0) 
+            {
+                shirtCount++;
+            } 
+            else if (item == 1) 
+            {
+                if (shirtCount > 0) 
+                {
+                    trouserCount++;
+                    shirtCount--;
+                } 
+              else 
+                {
+                    System.out.println("Invalid Purchase");
+                    return;
+                }
+            } 
+            else 
+              {
+                System.out.println("Invalid input");
+                return;
+              }
+        }
+        if (trouserCount == 0) 
+        {
+            System.out.println("Invalid Purchase");
+        } 
+        else 
+        {
+            System.out.println("Valid Purchase");
+        }
+    }
+}
