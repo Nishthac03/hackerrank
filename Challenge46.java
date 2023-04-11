@@ -32,3 +32,60 @@ Sample Input 2:
 Sample Output 2:
 Invalid Cuboid
 */
+
+
+import java.util.Scanner;
+
+public class CuboidIdentifier 
+{
+    public static void main(String[] args) 
+    {
+        Scanner scanner = new Scanner(System.in);
+
+        try 
+        {
+            int length = scanner.nextInt();
+            int breadth = scanner.nextInt();
+            int height = scanner.nextInt();
+
+            if (length <= 0 || breadth <= 0 || height <= 0) 
+            {
+                throw new InvalidInputException();
+            }
+
+            if (length == breadth && breadth == height) 
+            {
+                throw new InvalidCuboidException();
+            }
+
+            if (length == breadth || breadth == height || height == length) 
+            {
+                System.out.println("Valid Cuboid");
+            } 
+            else 
+            {
+                System.out.println("Invalid Input");
+            }
+        } 
+        catch (Exception e) 
+        {
+            System.out.println("Invalid Cuboid");
+        }
+    }
+}
+
+class InvalidCuboidException extends Exception 
+{
+    public InvalidCuboidException() 
+    {
+        super("Invalid Cuboid");
+    }
+}
+
+class InvalidInputException extends Exception 
+{
+    public InvalidInputException() 
+    {
+        super("Invalid Input");
+    }
+}
