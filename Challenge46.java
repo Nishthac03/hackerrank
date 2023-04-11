@@ -1,5 +1,4 @@
 /*
-
 Cube and cuboid have a difference that in cube all the six faces are square while in cuboid all faces are rectangular.
 Write a program in which user will enter length, breath, and height and identify that wheather it is a cuboid or not. 
 If user input is same for length, breath, and height then it will be cube and program should through InvalidCuboidException. 
@@ -89,3 +88,37 @@ class InvalidInputException extends Exception
         super("Invalid Input");
     }
 }
+
+
+/*
+In Mathematics, if a triangle have exactly two equal sides then it is called isosceles triangle. 
+Write a program which will check whether for given inputs triangle is isosceles or not. 
+If not then it generate InvalidIsoscelesTriangleException. Handle the exception and print Invalid Isosceles Triangle.
+
+Input Format:
+Three integer values representing length of sides of triangle.
+
+Constraints:
+sides can not be having length more than 10.
+
+Output Format:
+Valid Isosceles Triangle/ Invalid Isosceles Triangle/ Invalid Input
+
+Sample Input 0:
+6 5 6
+
+Sample Output 0:
+Valid Isosceles Triangle
+
+Sample Input 1:
+6 7 8
+
+Sample Output 1:
+Invalid Isosceles Triangle
+
+Sample Input 2:
+12 12 11
+
+Sample Output 2:
+Invalid Input
+*/
