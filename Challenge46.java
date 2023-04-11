@@ -122,3 +122,56 @@ Sample Input 2:
 Sample Output 2:
 Invalid Input
 */
+
+
+import java.util.Scanner;
+
+class InvalidIsoscelesTriangleException extends Exception 
+{
+    public InvalidIsoscelesTriangleException(String message) 
+    {
+        super(message);
+    }
+}
+
+public class IsoscelesTriangleChecker 
+{
+    public static void main(String[] args) 
+    {
+        Scanner scanner = new Scanner(System.in);
+        int[] sides = new int[3];
+
+        System.out.print("");
+
+        for (int i = 0; i < 3; i++) 
+        {
+            sides[i] = scanner.nextInt();
+
+            if (sides[i] > 10) 
+            {
+                System.out.print("Invalid Input");
+                return;
+            }
+        }
+
+        try 
+        {
+            checkIsoscelesTriangle(sides);
+            System.out.print("Valid Isosceles Triangle");
+        } catch (InvalidIsoscelesTriangleException e) {
+            System.out.print("Invalid Isosceles Triangle");
+        }
+    }
+
+    public static void checkIsoscelesTriangle(int[] sides) throws InvalidIsoscelesTriangleException 
+    {
+        if ((sides[0] == sides[1] && sides[1] != sides[2]) ||
+                (sides[1] == sides[2] && sides[2] != sides[0]) ||
+                (sides[2] == sides[0] && sides[0] != sides[1])) 
+        {
+            return;
+        }
+
+        throw new InvalidIsoscelesTriangleException("Not an isosceles triangle");
+    }
+}
