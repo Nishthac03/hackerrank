@@ -31,3 +31,42 @@ Sample Input 2:
 Sample Output 2:
 invalid input
 */
+
+
+import java.util.Scanner;
+
+class UnexpectedTrouserSizeException extends Exception 
+{
+    public UnexpectedTrouserSizeException() 
+    {
+        super();
+    }
+}
+
+public class Solution
+{
+    public static void main(String[] args) 
+    {
+        Scanner sc = new Scanner(System.in);
+        try {
+            int size = sc.nextInt();
+            if (size < 18 || size > 40) 
+            {
+                throw new UnexpectedTrouserSizeException();
+            } 
+            else 
+            {
+                System.out.println("try and shop");
+            }
+        } 
+        catch (UnexpectedTrouserSizeException e) 
+        {
+            System.out.println("the demanded size is out of stock");
+        } 
+        catch (Exception e) 
+        {
+            System.out.println("invalid input");
+        }
+        sc.close();
+    }
+}
