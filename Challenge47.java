@@ -104,3 +104,42 @@ Sample Input 1:
 Sample Output 1:
 Invalid
 */
+
+
+import java.util.Scanner;
+import java.util.function.IntBinaryOperator;
+
+public class Solution 
+{
+    public static void main(String[] args) 
+    {
+        Scanner sc = new Scanner(System.in);
+        int a = sc.nextInt();
+        int b = sc.nextInt();
+        int op = sc.nextInt();
+        sc.close();
+
+        IntBinaryOperator operation;
+        switch (op) 
+        {
+            case 1:
+                operation = (x, y) -> x + y;
+                break;
+            case 2:
+                operation = (x, y) -> x - y;
+                break;
+            case 3:
+                operation = (x, y) -> x * y;
+                break;
+            case 4:
+                operation = (x, y) -> x / y;
+                break;
+            default:
+                System.out.println("Invalid");
+                return;
+        }
+
+        int result = operation.applyAsInt(a, b);
+        System.out.println(result);
+    }
+}
